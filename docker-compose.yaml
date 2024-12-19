@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  terraform-deployer:
+    build: .
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - $HOME/.config/gcloud:/root/.config/gcloud:ro
+      - ./src:/app/src
+      - ./credentials:/app/src/credentials
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/root/.config/gcloud/application_default_credentials.json
+    command: /app/config.yaml 

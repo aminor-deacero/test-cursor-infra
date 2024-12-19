@@ -1,0 +1,5 @@
+project_id = "my-gcp-project"
+region = "us-central1"
+zone = "us-central1-a"
+name = "my-vm-instance"
+machine_type = "e2-medium"
